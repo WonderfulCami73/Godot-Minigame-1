@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bktcwfg8tck01"]
+[gd_scene load_steps=8 format=3 uid="uid://bktcwfg8tck01"]
 
 [ext_resource type="PackedScene" uid="uid://g0ikyr1cve2h" path="res://Scenes/player.tscn" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://cg487x3wldk2q" path="res://Scenes/level.tscn" id="2_kln2b"]
 [ext_resource type="Script" uid="uid://c78ji3omfsv77" path="res://Scripts/pointsText.gd" id="4_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://m11kfdlqnjon" path="res://Scenes/platform.tscn" id="4_v1gob"]
+[ext_resource type="PackedScene" uid="uid://dfucc2hcldhn7" path="res://Scenes/coin.tscn" id="5_jw32o"]
+[ext_resource type="PackedScene" uid="uid://b3lksjdl28sdo" path="res://Scenes/spring.tscn" id="6_50glp"]
+[ext_resource type="PackedScene" uid="uid://dr21emafvi37e" path="res://Scenes/hazard_bomb.tscn" id="7_jw32o"]
 
 [node name="Main Scene" type="Node3D"]
 
@@ -44,9 +48,106 @@ script = ExtResource("4_rgh2o")
 transform = Transform3D(0.9408867, 0, -0.33872154, 0.26964808, 0.6051968, 0.74901736, 0.20499314, -0.796076, 0.5694215, 0, 10, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_kln2b")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.5906524, 1.7738466, 5.118198)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.7177968, 1.2851617, 6.818618)
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.91969824, 0.39262608, 0, -0.39262608, 0.91969824, -0.31240737, 2.45037, 3.2369843)
 
 [node name="Level" parent="." instance=ExtResource("2_kln2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.364862, -0.47666454, 1.6968737)
+
+[node name="Platform" parent="Level" instance=ExtResource("4_v1gob")]
+transform = Transform3D(2.1614995, 0, 0, 0, 2.1614995, 0, 0, 0, 2.1614995, -3.0614588, -1.2188811, 5.407837)
+
+[node name="Platform2" parent="Level" instance=ExtResource("4_v1gob")]
+transform = Transform3D(4.62028, 0, 0, 0, 2.1614995, 0, 0, 0, 2.912578, 21.745333, 2.9924474, 5.0076156)
+
+[node name="Platform3" parent="Level" instance=ExtResource("4_v1gob")]
+transform = Transform3D(4.62028, 0, 0, 0, 2.1614995, 0, 0, 0, 2.912578, 31.015886, 2.9924474, 5.0076156)
+
+[node name="Platform4" parent="Level" instance=ExtResource("4_v1gob")]
+transform = Transform3D(4.62028, 0, 0, 0, 2.1614995, 0, 0, 0, 2.912578, 40.359695, 2.9924474, 5.0076156)
+
+[node name="Platform5" parent="Level" instance=ExtResource("4_v1gob")]
+transform = Transform3D(4.62028, 0, 0, 0, 2.1614995, 0, 0, 0, 2.912578, 49.67381, 2.9924474, 5.0076156)
+
+[node name="Platform6" parent="Level" instance=ExtResource("4_v1gob")]
+transform = Transform3D(0.09022949, 0, 2.9120224, 0, 2.1614993, 0, -4.6193986, 0, 0.05687977, 56.11995, 8.426239, 5.8035483)
+
+[node name="Platform7" parent="Level" instance=ExtResource("4_v1gob")]
+transform = Transform3D(0.09022949, 0, 2.9120224, 0, 2.1614993, 0, -4.6193986, 0, 0.05687977, 59.557983, 9.45057, 5.906093)
+
+[node name="Platform8" parent="Level" instance=ExtResource("4_v1gob")]
+transform = Transform3D(0.09022949, 0, 2.9120224, 0, 2.1614993, 0, -4.6193986, 0, 0.05687977, 62.64628, 11.046031, 6.235291)
+
+[node name="Platform9" parent="Level" instance=ExtResource("4_v1gob")]
+transform = Transform3D(0.09022949, 0, 2.9120224, 0, 2.1614993, 0, -4.6193986, 0, 0.05687977, 65.29849, 12.031305, 6.202679)
+
+[node name="Platform10" parent="Level" instance=ExtResource("4_v1gob")]
+transform = Transform3D(0.16419025, 0, 7.7288556, 0, 2.1614993, 0, -8.405902, 0, 0.1509657, 77.74707, 14.820898, 6.835226)
+
+[node name="Coin" parent="Level" instance=ExtResource("5_jw32o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.754389, 1.4371777, 5.627139)
+
+[node name="Coin2" parent="Level" instance=ExtResource("5_jw32o")]
+transform = Transform3D(-0.007016168, 0, 0.9999754, 0, 1, 0, -0.9999754, 0, -0.007016168, 35.14316, 5.971024, 5.2292337)
+
+[node name="Coin3" parent="Level" instance=ExtResource("5_jw32o")]
+transform = Transform3D(-0.007016168, 0, 0.9999754, 0, 1, 0, -0.9999754, 0, -0.007016168, 61.207584, 13.867833, 6.467718)
+
+[node name="Coin4" parent="Level" instance=ExtResource("5_jw32o")]
+transform = Transform3D(-0.007016168, 0, 0.9999754, 0, 1, 0, -0.9999754, 0, -0.007016168, 74.55121, 17.49406, 6.4313154)
+
+[node name="Coin6" parent="Level" instance=ExtResource("5_jw32o")]
+transform = Transform3D(-0.007016168, 0, 0.9999754, 0, 1, 0, -0.9999754, 0, -0.007016168, 78.80811, 17.51698, 6.5723486)
+
+[node name="Coin7" parent="Level" instance=ExtResource("5_jw32o")]
+transform = Transform3D(-0.007016168, 0, 0.9999754, 0, 1, 0, -0.9999754, 0, -0.007016168, 75.47157, 17.50454, 9.27467)
+
+[node name="Coin5" parent="Level" instance=ExtResource("5_jw32o")]
+transform = Transform3D(-0.007016168, 0, 0.9999754, 0, 1, 0, -0.9999754, 0, -0.007016168, 76.22608, 17.63335, 3.7440543)
+
+[node name="Spring" parent="Level" instance=ExtResource("6_50glp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8262491, 0.15665197, 5.4329343)
+
+[node name="Spring2" parent="Level" instance=ExtResource("6_50glp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.09625, 13.778842, 5.952899)
+
+[node name="Spring3" parent="Level" instance=ExtResource("6_50glp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.34375, 4.5194497, 5.1881127)
+
+[node name="Hazard_Bomb" parent="Level" instance=ExtResource("7_jw32o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3052444, 5.3389363)
+
+[node name="Hazard_Bomb2" parent="Level" instance=ExtResource("7_jw32o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.303083, 5.532798, 5.3389363)
+
+[node name="Hazard_Bomb3" parent="Level" instance=ExtResource("7_jw32o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.303083, 5.532798, 6.5385504)
+
+[node name="Hazard_Bomb4" parent="Level" instance=ExtResource("7_jw32o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.303083, 5.532798, 4.0957794)
+
+[node name="Hazard_Bomb7" parent="Level" instance=ExtResource("7_jw32o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.40037, 5.532798, 4.0957794)
+
+[node name="Hazard_Bomb8" parent="Level" instance=ExtResource("7_jw32o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.40037, 5.532798, 5.309937)
+
+[node name="Hazard_Bomb9" parent="Level" instance=ExtResource("7_jw32o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.40037, 5.532798, 6.3996935)
+
+[node name="Hazard_Bomb10" parent="Level" instance=ExtResource("7_jw32o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.40037, 5.532798, 2.952577)
+
+[node name="Hazard_Bomb12" parent="Level" instance=ExtResource("7_jw32o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.546074, 17.434128, 6.6386843)
+
+[node name="Hazard_Bomb11" parent="Level" instance=ExtResource("7_jw32o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.40037, 5.532798, 7.4758825)
+
+[node name="Hazard_Bomb5" parent="Level" instance=ExtResource("7_jw32o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.303083, 5.532798, 2.7794743)
+
+[node name="Hazard_Bomb6" parent="Level" instance=ExtResource("7_jw32o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.303083, 5.532798, 7.5633955)
